@@ -1,16 +1,16 @@
 import React from "react";
 
-const Input = ({ name, lable, value, error, onChange }) => {
+const Input = ({ name, lable, error, ...rest }) => {
 	return (
 		<div className="mb-3">
 			<lable htmlFor={name}>{lable}</lable>
 			<input
-				value={value}
-				onChange={onChange}
-				// ref={this.username}
-				id={name}
+				{...rest}
+				// value={value}
+				// onChange={onChange}
+				// type={type}
 				name={name}
-				type="text"
+				id={name}
 				className="form-control"
 			/>
 			{error && <div className="alert alert-danger">{error}</div>}
