@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { getMovies } from "../services/fakeMovieService";
-
+import { getGenres } from "../services/fakeGenreService";
 import Pagination from "./common/pagination";
 import { paginate } from "../utils/paginate";
 import ListGroup from "./common/listgroup";
-import { getGenres } from "../services/fakeGenreService";
+
 import MoviesTable from "./moviesTable";
+import { Link } from "react-router-dom";
 import _ from "lodash";
 
 class Movies extends Component {
@@ -98,9 +99,15 @@ class Movies extends Component {
 					/>
 				</div>
 				<div className="col">
-					<p className={this.getBadgeClasess()}>
-						Showing {totalCount} movies in the databse
-					</p>
+					<Link
+						to="/movies/new"
+						className="btn btn-primary"
+						style={{ marginBottom: 20 }}
+					>
+						{" "}
+						New Movie{" "}
+					</Link>
+					<p>Showing {totalCount} movies in the databse</p>
 					<MoviesTable
 						movies={movies}
 						sortColumn={sortColumn}

@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Movies from "./component/movies";
-import MovieForm from "./component/moviesForm";
+import MovieForm from "./component/movieForm";
 import Customers from "./component/customers";
 import NotFound from "./component/notFound";
 import Rentals from "./component/rentals";
